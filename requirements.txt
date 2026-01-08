@@ -1,0 +1,27 @@
+# Base Data Science Stack
+numpy>=1.23.5
+pandas>=1.5.3
+scipy>=1.10.1
+
+# Deep Learning Frameworks
+# Used for Autoencoders and Med2Vec-style embeddings [cite: 101, 106]
+torch>=2.0.0
+torchvision>=0.15.1
+
+# Natural Language Processing
+# Essential for ClinicalBERT and medical-domain tokenization 
+transformers>=4.28.1
+tokenizers>=0.13.3
+
+# Machine Learning & Clustering
+# Required for K-Means, Hierarchical Clustering, and similarity metrics [cite: 93, 165]
+scikit-learn>=1.2.2
+
+# Visualization (Journal Quality)
+# Used for Ablation Study and Sensitivity Analysis plots
+matplotlib>=3.7.1
+seaborn>=0.12.2
+
+# Utilities
+tqdm>=4.65.0
+scikit-plot>=0.3.7
