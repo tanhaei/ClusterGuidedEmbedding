@@ -1,0 +1,12 @@
+# Data
+data/raw/*
+data/processed/*
+
+# Weights
+weights/*.pt
+weights/*.bin
+
+# Environments
+venv/
+.env
+__pycache__/
