@@ -1,8 +1,14 @@
+import torch
 import torch.nn as nn
 
 class NumericAutoencoder(nn.Module):
-    def __init__(self, input_dim, latent_dim=128):
-        super().__init__()
+    """
+    مدل اتوانکودر برای ویژگی‌های عددی.
+    ساختار لایه‌ها دقیقاً با فایل وزن تولید شده هماهنگ است.
+    """
+    def __init__(self, input_dim=50, latent_dim=128):
+        super(NumericAutoencoder, self).__init__()
+        # ساختار Sequential برای مطابقت با فایل وزن تولید شده
         self.encoder = nn.Sequential(
             nn.Linear(input_dim, 256),
             nn.ReLU(),
@@ -20,8 +26,11 @@ class NumericAutoencoder(nn.Module):
         return latent, reconstructed
 
 class CategoricalEmbedder(nn.Module):
-    def __init__(self, vocab_size, embed_dim=128):
-        super().__init__()
+    """
+    مدل تعبیه‌سازی برای کدهای تشخیصی و دارو (Med2Vec-style).
+    """
+    def __init__(self, vocab_size=1000, embed_dim=128):
+        super(CategoricalEmbedder, self).__init__()
         self.embedding = nn.Linear(vocab_size, embed_dim)
         
     def forward(self, x):
