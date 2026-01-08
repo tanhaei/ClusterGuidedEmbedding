@@ -1,4 +1,4 @@
-# **Cluster-Guided Embedding for Patient Similarity Search in BioArc: An Interpretable EHR Retrieval Framework**
+# **Cluster-Guided Embedding for Patient Similarity Search in BioArc**
 
 This repository contains the official implementation of the **Cluster-Guided Embedding** framework for patient similarity search in Electronic Health Records (EHR), with a focus on ophthalmology cases from the BioArc registry.
 
@@ -9,6 +9,7 @@ Our framework structures heterogeneous EHR data into clinically meaningful clust
 ### **Key Features**
 
 * **Clinically Guided Clustering:** Groups features using domain expertise and unsupervised methods (K-Means).  
+* **Temporal EHR Modeling:** Utilizes GRU-based Autoencoders to capture disease progression and clinical trajectories across multiple visits.
 * **Multi-modal Embedding:** Integrated support for Numerical (Autoencoders), Categorical (Med2Vec-style), and Textual (ClinicalBERT) data.  
 * **Weighted Fusion:** Learnable importance weights for different clinical domains.
 
@@ -60,7 +61,7 @@ This script will:
 
 * Process input features from data/.  
 * Perform K-Means clustering to identify clinical groups.  
-* Train cluster-specific Autoencoders and fusion weights.  
+* Train **Temporal Autoencoders (GRU)** for each cluster and learn fusion weights. 
 * Save weights to the weights/ directory.
 
 ### **2\. Evaluation**
