@@ -1,4 +1,4 @@
-# **Cluster-Guided Embedding for Patient Similarity Search in BioArc**
+# **Cluster-Guided Embedding for Patient Similarity Search**
 
 This repository contains the official implementation of the **Cluster-Guided Embedding** framework for patient similarity search in Electronic Health Records (EHR), with a focus on ophthalmology cases from the BioArc registry.
 
