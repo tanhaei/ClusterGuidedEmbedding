@@ -18,23 +18,23 @@ Our framework structures heterogeneous EHR data into clinically meaningful clust
 ```
 Cluster-Guided-Embedding/    
 ├── data/                   \# Dataset directory (Note: BioArc raw data is private)    
-│   └── sample\_patient.json \# Structure of expected input    
+│   └── sample_patient.json \# Structure of expected input    
 ├── src/                    \# Source code directory    
 │   ├── preprocessing/      \# Package for data cleaning and tokenization    
 │   │   ├── preprocessor.py     \# BioArc specific preprocessing  
-│   │   └── mimic\_processor.py  \# MIMIC-IV preprocessing logic (Added for Reviewer)  
+│   │   └── mimic_processor.py  \# MIMIC-IV preprocessing logic  
 │   ├── clustering/         \# Package for feature grouping logic    
-│   │   ├── feature\_clustering.py  
-│   │   └── mimic\_validation.py \# Statistical validation of clusters (Added for Reviewer)  
+│   │   ├── feature_clustering.py  
+│   │   └── mimic_validation.py \# Statistical validation of clusters 
 │   ├── models/             \# Package for neural network architectures    
 │   │   ├── embeddings.py       \# Proposed encoders  
-│   │   └── baselines.py        \# Global Baseline implementation (Added for Reviewer)  
+│   │   └── baselines.py        \# Global Baseline implementation 
 │   └── fusion/             \# Package for integration and weighting    
 │       └── integration.py    
 ├── weights/                \# Pre-trained model weights (.pt files)    
 ├── train.py                \# Main training pipeline script    
-├── test\_similarity.py      \# Evaluation and metric calculation script    
-├── test\_mimic\_validation.py\# External validation benchmark (Added for Reviewer)  
+├── test_similarity.py      \# Evaluation and metric calculation script    
+├── test_mimic_validation.py\# External validation benchmark 
 └── requirements.txt        \# Environment dependencies
 ```
 
@@ -73,7 +73,7 @@ python test_similarity.py
 
 ## **External Validation (MIMIC-IV)**
 
-To address reviewer comments regarding generalizability and reproducibility, we have provided the full pipeline for validation on the **MIMIC-IV dataset**.
+To address the concern regarding generalizability and reproducibility, we have provided the full pipeline for validation on the **MIMIC-IV dataset**.
 
 ### **1\. Preprocessing & Clinical Grouping**
 
@@ -85,7 +85,7 @@ python src/preprocessing/mimic_processor.py
 
 ### **2\. Preliminary Cluster Results**
 
-Before training, the cohesion of clinical clusters is validated. This script calculates the **Silhouette Score** and **Calinski-Harabasz Index** to justify the choice of ![][image1] clusters as reported in the paper.
+Before training, the cohesion of clinical clusters is validated. This script calculates the **Silhouette Score** and **Calinski-Harabasz Index** to justify the choice of clusters as reported in the paper.
 
 ```bash
 python src/clustering/mimic_validation.py
@@ -106,7 +106,7 @@ python test_mimic_validation.py
 
 ## **Pre-trained Weights**
 
-In compliance with reviewer recommendations, pre-trained weights for the Ophthalmic and Systemic clusters are provided in the weights/ directory. These weights were trained on the BioArc ophthalmology cohort (N=5,000).
+Pre-trained weights for the Ophthalmic and Systemic clusters are provided in the weights/ directory. These weights were trained on the BioArc ophthalmology cohort (N=5,000).
 
 ## **Data Privacy**
 
