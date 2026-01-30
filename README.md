@@ -97,12 +97,13 @@ We provide a comparative benchmark between the standard **Global Embedding** app
 
 ```bash
 python test_mimic_validation.py
+```
 
 | Method | Precision@10 | Recall@10 | F1-Score |
 | :---- | :---- | :---- | :---- |
 | Global Baseline | 0.74 | 0.69 | 0.71 |
 | **Cluster-Guided (Proposed)** | **0.79** | **0.74** | **0.76** |
-```
+
 
 ## **Pre-trained Weights**
 
